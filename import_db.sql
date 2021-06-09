@@ -62,7 +62,9 @@ INSERT INTO
   questions(title, body, a_author_id)
 VALUES
   ('confused','How do I do this project?', (SELECT id FROM users WHERE fname = 'Shirley')),
-  ('lunch', 'Whats for lunch?', (SELECT id FROM users WHERE fname = 'Oscar')); 
+  ('lunch', 'Whats for lunch?', (SELECT id FROM users WHERE fname = 'Oscar')), 
+  ('breakfast', 'Whats for breakfast?', (SELECT id FROM users WHERE fname = 'Oscar')), 
+  ('dinner', 'Whats for dinner?', (SELECT id FROM users WHERE fname = 'Oscar')); 
 
   INSERT INTO 
     question_follows(user_id,question_id)
@@ -74,8 +76,7 @@ VALUES
     replies(question_id,user_id,parent_id,reply_body)
   VALUES 
     ((SELECT id FROM questions WHERE title = 'confused'), (SELECT id FROM users WHERE fname = 'Oscar'), NULL, 'Im just as confused'),
-    ((SELECT id FROM questions WHERE title = 'confused'), (SELECT id FROM users WHERE fname = 'Shirley'),
-    (SELECT id FROM replies WHERE reply_body = 'Im just as confused'), 'Something else' );
+    ((SELECT id FROM questions WHERE title = 'confused'), (SELECT id FROM users WHERE fname = 'Shirley'), (SELECT id FROM replies WHERE reply_body = 'Im just as confused'), 'Something else' );
 
 
 INSERT INTO 
