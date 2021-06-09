@@ -76,7 +76,7 @@ VALUES
     replies(question_id,user_id,parent_id,reply_body)
   VALUES 
     ((SELECT id FROM questions WHERE title = 'confused'), (SELECT id FROM users WHERE fname = 'Oscar'), NULL, 'Im just as confused'),
-    ((SELECT id FROM questions WHERE title = 'confused'), (SELECT id FROM users WHERE fname = 'Shirley'), (SELECT id FROM replies WHERE reply_body = 'Im just as confused'), 'Something else' );
+    ((SELECT id FROM questions WHERE title = 'confused'), (SELECT id FROM users WHERE fname = 'Shirley'), 1 , 'Something else' );
 
 
 INSERT INTO 
