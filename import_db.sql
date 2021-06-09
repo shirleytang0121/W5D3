@@ -55,6 +55,7 @@ INSERT INTO
   users(fname,lname)
 VALUES 
   ('Shirley','Tang'),
+  ('Shirley','Tang'),
   ('Oscar', 'Vazquez'); 
 
 INSERT INTO 
