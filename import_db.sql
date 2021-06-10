@@ -70,7 +70,9 @@ VALUES
     question_follows(user_id,question_id)
   VALUES
    ((SELECT id FROM users WHERE fname = 'Shirley'), (SELECT id FROM questions WHERE title = 'confused')),
-   ((SELECT id FROM users WHERE fname = 'Oscar'), (SELECT id FROM questions WHERE title = 'lunch'));
+   ((SELECT id FROM users WHERE fname = 'Oscar'), (SELECT id FROM questions WHERE title = 'lunch')),
+   ((SELECT id FROM users WHERE fname = 'Oscar'), (SELECT id FROM questions WHERE title = 'dinner')),
+   ((SELECT id FROM users WHERE fname = 'Shirley'), (SELECT id FROM questions WHERE title = 'dinner'));
 
   INSERT INTO 
     replies(question_id,user_id,parent_id,reply_body)

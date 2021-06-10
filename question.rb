@@ -1,6 +1,7 @@
 require_relative 'questiondb.rb'
 require_relative 'user.rb'
 require_relative 'reply.rb'
+require_relative 'QuestionFollow.rb'
 
 class Question
     attr_accessor :id,:title, :body, :a_author_id
@@ -56,6 +57,10 @@ class Question
     
     def replies
         Reply.find_by_question_id(self.id)
+    end
+    
+    def followers
+        QuestionFollow.followers_for_question_id(self.id)
     end
     
     
